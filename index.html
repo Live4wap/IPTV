@@ -19,9 +19,9 @@
                     const iframe = document.getElementById('stream-iframe');
                     if (streamInfo.id) {
                     const key= encodeURIComponent(streamInfo.url);
-                           
+                      const key1= encodeURIComponent(streamInfo.id);     
                      
- iframe.src =`https://tv4wap.github.io/${key}?=id=streamId`;
+ iframe.src =`https://tv4wap.github.io/${key}?=id=${key1}`;
                     } 
                 });
         });
