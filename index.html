@@ -17,11 +17,11 @@
                 .then(data => {
                     const streamInfo = data.find(item => item.id === streamId);
                     const iframe = document.getElementById('stream-iframe');
-                    if (streamInfo.id) {
+                    if (streamInfo.url) {
                     const key= encodeURIComponent(streamInfo.url);
-                      const key1= encodeURIComponent(streamInfo.id);     
+                      const keyId= encodeURIComponent(streamInfo.id);     
                      
- iframe.src =`https://tv4wap.github.io/${key}?=id=${key1}`;
+ iframe.src =`https://tv4wap.github.io/${key}?=id=${keyId}`;
                     } 
                 });
         });
