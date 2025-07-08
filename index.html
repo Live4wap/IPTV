@@ -1,0 +1,43 @@
+
+
+
+
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>TV4WAP LIVE4WAP SONY </title> 
+  <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const streamId = urlParams.get('id');
+            
+            if (!streamId) return;
+            
+            fetch('https://raw.githubusercontent.com/Shubhamkur/Tv/refs/heads/main/sony2')
+                .then(response => response.json())
+                .then(data => {
+                    const streamInfo = data.find(item => item.id === streamId);
+                    const iframe = document.getElementById('stream-iframe');
+                    if (streamInfo.m3u8) {
+                    const key= encodeURIComponent(streamInfo.m3u8);
+                           
+                     
+ iframe.src =`https://tv4wap.github.io/p13?url=${key}`;
+                    } 
+                });
+        });
+    </script> 
+ </head> 
+ <body style="position:absolute;margin: 0; padding: 0; height: 100%;width:100%;background:#000"> 
+  <iframe id="stream-iframe" style="width: 100%; height: 100%; border: none;" allow="autoplay; fullscreen" allowfullscreen></iframe> 
+ </body>
+</html>
+
+
+
+
+
+
+
+
+
+
