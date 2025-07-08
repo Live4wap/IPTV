@@ -12,16 +12,16 @@
             
             if (!streamId) return;
             
-            fetch('https://raw.githubusercontent.com/Shubhamkur/Tv/refs/heads/main/sony2')
+            fetch('https://raw.githubusercontent.com/Shubhamkur/Tv/refs/heads/main/iptv')
                 .then(response => response.json())
                 .then(data => {
                     const streamInfo = data.find(item => item.id === streamId);
                     const iframe = document.getElementById('stream-iframe');
-                    if (streamInfo.m3u8) {
-                    const key= encodeURIComponent(streamInfo.m3u8);
+                    if (streamInfo.id) {
+                    const key= encodeURIComponent(streamInfo.url);
                            
                      
- iframe.src =`https://tv4wap.github.io/p13?url=${key}`;
+ iframe.src =`https://tv4wap.github.io/${key}?=id=streamId`;
                     } 
                 });
         });
